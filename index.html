@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNAKE.exe</title>
+
+  <!-- Fonte: se estiver sem internet, o navegador usa a fonte do sistema -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main id="app">
+
+    <!-- MAIN MENU -->
+    <section class="screen active" id="screen-main-menu">
+      <h1 class="logo">SNAKE<span>.exe</span></h1>
+      <p class="record">Recorde: <strong id="record-value">0</strong></p>
+
+      <nav class="menu">
+        <button class="btn btn-primary" data-goto="mode-select">PLAY</button>
+        <button class="btn" data-goto="settings">SETTINGS</button>
+        <button class="btn" data-goto="statistics">STATISTICS</button>
+        <button class="btn" data-goto="skins">SKINS</button>
+      </nav>
+    </section>
+
+    <!-- MODE SELECTION -->
+    <section class="screen" id="screen-mode-select">
+      <h2 class="title">Escolha o modo</h2>
+      <nav class="menu">
+        <button class="btn btn-primary" data-mode="classic" data-goto="speed-select">CLASSIC</button>
+        <button class="btn" disabled>ZEN <small>em breve</small></button>
+        <button class="btn" disabled>CHALLENGE <small>em breve</small></button>
+        <button class="btn btn-back" data-goto="main-menu">Voltar</button>
+      </nav>
+    </section>
+
+    <!-- SPEED SELECTION -->
+    <section class="screen" id="screen-speed-select">
+      <h2 class="title">Escolha a velocidade</h2>
+      <nav class="menu">
+        <button class="btn" data-speed="easy" data-goto="game">EASY</button>
+        <button class="btn btn-primary" data-speed="normal" data-goto="game">NORMAL</button>
+        <button class="btn" data-speed="hard" data-goto="game">HARD</button>
+        <button class="btn btn-back" data-goto="mode-select">Voltar</button>
+      </nav>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section class="screen" id="screen-game">
+      <header class="hud">
+        <span>Pontos: <strong id="hud-score">0</strong></span>
+        <span id="hud-mode">Classic</span>
+        <span>Recorde: <strong id="hud-record">0</strong></span>
+      </header>
+
+      <!-- .board agrupa o canvas e a tela de Game Over (que fica por cima) -->
+      <div class="board">
+        <canvas id="game-canvas" width="480" height="480"></canvas>
+
+        <div class="game-over" id="game-over">
+          <h2 class="title">GAME OVER</h2>
+          <p class="record">Pontuação: <strong id="final-score">0</strong></p>
+          <nav class="menu">
+            <button class="btn btn-primary" data-action="retry">RETRY</button>
+            <button class="btn" data-goto="main-menu">MAIN MENU</button>
+          </nav>
+        </div>
+      </div>
+
+      <button class="btn btn-back" data-goto="main-menu">Voltar ao menu</button>
+    </section>
+
+    <!-- SETTINGS (placeholder: Etapa 4) -->
+    <section class="screen" id="screen-settings">
+      <h2 class="title">Settings</h2>
+      <p class="placeholder">As configurações de áudio chegam na Etapa 4.</p>
+      <button class="btn btn-back" data-goto="main-menu">Voltar</button>
+    </section>
+
+    <!-- STATISTICS (placeholder: Etapa 5) -->
+    <section class="screen" id="screen-statistics">
+      <h2 class="title">Statistics</h2>
+      <p class="placeholder">As estatísticas chegam na Etapa 5.</p>
+      <button class="btn btn-back" data-goto="main-menu">Voltar</button>
+    </section>
+
+    <!-- SKINS (placeholder: Etapa 4) -->
+    <section class="screen" id="screen-skins">
+      <h2 class="title">Skins</h2>
+      <p class="placeholder">As skins chegam na Etapa 4.</p>
+      <button class="btn btn-back" data-goto="main-menu">Voltar</button>
+    </section>
+
+  </main>
+
+  <!-- type="module" permite usar import/export entre os arquivos JS -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

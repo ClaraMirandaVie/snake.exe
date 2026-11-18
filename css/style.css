@@ -1,0 +1,199 @@
+/* 1) VARIÁVEIS: a paleta fica toda aqui.
+   Quer mudar uma cor do jogo inteiro? Muda só neste bloco. */
+:root {
+  --bg: #14161a;
+  --panel: #1c1f25;
+  --line: #2e323a;
+  --text: #e8eaed;
+  --muted: #8b919c;
+  --cyan: #22e3e3;
+  --cyan-glow: rgba(34, 227, 227, 0.35);
+  --coral: #ff6b81;
+
+  --font: "Chakra Petch", system-ui, sans-serif;
+}
+
+/* 2) RESET básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  display: grid;
+  place-items: center;
+}
+
+/* 3) TELAS: só a que tem a classe "active" aparece */
+#app {
+  width: 100%;
+  max-width: 520px;
+  padding: 24px;
+}
+
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.screen.active {
+  display: flex;
+  animation: fade-in 0.2s ease;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* 4) TEXTOS */
+.logo {
+  font-size: clamp(2.8rem, 10vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 24px var(--cyan-glow);
+}
+
+.logo span {
+  color: var(--cyan);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.record,
+.placeholder {
+  color: var(--muted);
+}
+
+.record strong {
+  color: var(--text);
+}
+
+/* 5) BOTÕES */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.btn {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s, color 0.15s;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--cyan);
+  box-shadow: 0 0 14px var(--cyan-glow);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.btn-back {
+  background: transparent;
+  border-color: transparent;
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.btn-back:hover:not(:disabled) {
+  color: var(--text);
+  box-shadow: none;
+  border-color: var(--line);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn small {
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
+  margin-left: 8px;
+}
+
+/* 6) TELA DE JOGO */
+.hud {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--muted);
+}
+
+.hud strong {
+  color: var(--text);
+}
+
+#hud-mode {
+  color: var(--cyan);
+}
+
+.board {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid var(--cyan);
+  box-shadow: 0 0 20px var(--cyan-glow);
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #101216;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 5% 5%;
+}
+
+/* Tela de Game Over: escondida por padrão, aparece com .visible */
+.game-over {
+  display: none;
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(16, 18, 22, 0.9);
+}
+
+.game-over.visible {
+  display: flex;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen.active { animation: none; }
+  .btn { transition: none; }
+}
