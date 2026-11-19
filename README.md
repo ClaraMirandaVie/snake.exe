@@ -13,7 +13,7 @@ Play directly in your browser:
 - Three difficulty levels:
   - **Easy:** Slower movement speed.
   - **Normal:** Standard movement speed.
-  - **Hard:**Faster movement speed.
+  - **Hard:** Faster movement speed.
 - Score tracking system.
 - Runs directly in the browser.
 
