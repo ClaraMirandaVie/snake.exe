@@ -1,51 +1,48 @@
 # snake.exe
-Uma versão do clássico jogo da cobrinha.
+A web-based version of the classic Snake game.
 
-## Sobre o projeto
-O SNAKE.exe foi desenvolvido como um projeto pessoal com o objetivo de praticar programação, explorar o desenvolvimento de jogos e aprimorar conhecimentos em tecnologias web.
+## About the Project
+SNAKE.exe is a personal project developed to practice programming, explore game development, and improve web development skills.
 
-## Acesse o jogo
-Jogue diretamente pelo navegador:
-[**Jogar SNAKE.exe**](https://claramirandavie.github.io/snake.exe/)
+## Play online
+Play directly in your browser:
+[**Play SNAKE.exe**](https://claramirandavie.github.io/snake.exe/)
 
-## Funcionalidades
-- Jogabilidade clássica do Snake.
-- Três níveis de dificuldade:
-  - **Easy:** velocidade reduzida.
-  - **Normal:** velocidade padrão.
-  - **Hard:** velocidade aumentada.
-- Sistema de pontuação.
-- Execução diretamente no navegador.
+## Features
+- Classic Snake gameplay.
+- Three difficulty levels:
+  - **Easy:** Slower movement speed.
+  - **Normal:** Standard movement speed.
+  - **Hard:**Faster movement speed.
+- Score tracking system.
+- Runs directly in the browser.
 
-## Como jogar
-1. Inicie uma partida.
-2. Utilize as setas do teclado para movimentar a cobrinha.
-3. Colete os alimentos para aumentar sua pontuação.
-4. Evite colidir com as paredes ou com o próprio corpo.
-5. Tente alcançar a maior pontuação possível.
+## How to play
+1. Start a new game.
+2. Use the arrow keys to control the snake.
+3. Collect food to increase your score. 
+4. Avoid hitting the walls or colliding with your own body.
+5. Try to achieve the highest score possible.
 
-## Tecnologias utilizadas
+## Technologies Used
 - HTML
 - CSS
 - JavaScript
 
-## Melhorias futuras
-O projeto continua em desenvolvimento. Algumas funcionalidades planejadas são:
-- Personalização de skins.
-- Efeitos sonoros e música.
-- Novos modos de jogo.
-- Desafios e mecânicas adicionais.
-- Mais opções de personalização.
+## Future Improvements
+- The project is continuously evolving. Planned improvements include:
+- Customizable snake skins.
+- Sound effects and background music.
+- Additional game modes.
+- New challenges and gameplay mechanics.
+- More customization options.
 
-## Como executar localmente
-Clone este repositório:
+## Running Locally
+Clone this repository:
 ```bash
 git clone https://github.com/ClaraMirandaVie/snake.exe.git
 ```
-Abra a pasta do projeto e execute o arquivo `index.html` em seu navegador.
-
-## Repositório
-[GitHub - SNAKE.exe](https://github.com/ClaraMirandaVie/snake.exe)
+Open the project folder and launch index.html in your browser.
 
 
 
